@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{obuhandout}[2021/04/26 OBU handout class]
+\ProvidesClass{rlrhandout}[2021/04/26 Ridenour handout class]
 
 \DeclareOption*
 {\PassOptionsToClass{\CurrentOption}{article}}

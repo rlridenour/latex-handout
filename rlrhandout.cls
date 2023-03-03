@@ -38,9 +38,9 @@
 \clubpenalty = 10000 % Reduce orphans and widows
 \widowpenalty = 10000
 
+
+% Adjust list spacing. Use \setlist[nosep] to reduce all vertical spacing in lists. \setlist[wide] to remove indentation.
 \usepackage{enumitem}
-\setlist[itemize]{noitemsep} % Comment out for wider separation in lists.
-\setlist[enumerate]{noitemsep}
 
 \usepackage{lualatex-math,luatextra}
 \usepackage{libertinus}

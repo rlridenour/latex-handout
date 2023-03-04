@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{rlrhandout}[2021/04/26 Ridenour handout class]
+\ProvidesClass{luahandout}[2021/04/26 LuaLaTeX handout class]
 
 \DeclareOption*
 {\PassOptionsToClass{\CurrentOption}{article}}

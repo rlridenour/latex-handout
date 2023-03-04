@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{rlrhandout}[2021/04/26 Ridenour handout class]
+\ProvidesClass{pdfhandout}[2021/04/26 Ridenour handout class]
 
 \DeclareOption*
 {\PassOptionsToClass{\CurrentOption}{article}}
@@ -11,7 +11,7 @@
 
 % Reduce font size in sidenotes.
 
-\RenewDocumentCommand\sidenotetext{ o o +m }{%      
+\RenewDocumentCommand\sidenotetext{ o o +m }{%    
   \IfNoValueOrEmptyTF{#1}{%
     \@sidenotes@placemarginal{#2}{\textsuperscript{\thesidenote}{}~\footnotesize#3}%
     \refstepcounter{sidenote}%
@@ -27,7 +27,7 @@
 
 \usepackage{graphicx,epstopdf,amsmath,amssymb,url}
 \usepackage[normalem]{ulem}
-\usepackage{microtype,todonotes}
+\usepackage{microtype}
 \usepackage[american]{babel}
 \usepackage[autostyle]{csquotes}
 \usepackage[letterpaper,left=1in,top=1in,headsep=2\baselineskip,textwidth=26pc,marginparsep=2pc,marginparwidth=12pc,textheight=44\baselineskip,headheight=\baselineskip]{geometry}
@@ -42,9 +42,11 @@
 % Adjust list spacing. Use \setlist[nosep] to reduce all vertical spacing in lists. \setlist[wide] to remove indentation.
 \usepackage{enumitem}
 
-\usepackage{lualatex-math,luatextra}
-\usepackage{libertinus}
-\usepackage{unicode-math}
+% Libertinus Fonts
+\usepackage{libertinus-type1}
+\usepackage{libertinust1math}
+\usepackage[T1]{fontenc}
+
 \usepackage[unicode=true]{hyperref}
 
 \renewcommand\maketitle
@@ -59,7 +61,8 @@
 
 \renewcommand{\footnote}{\sidenote}
 
-\fancyheadoffset[R]{\marginparsep+\marginparwidth}
+\fancyheadoffset[R]{\dimexpr\marginparsep + \marginparwidth}
+% \fancyheadoffset[R]{14pc}
 \fancyhead[L,C]{}
 \fancyhead[R]{\textbf{\textsf{\textsc{\MyTitle \phantom{X} \thepage}}}}
 \fancyfoot[L,C,R]{}
